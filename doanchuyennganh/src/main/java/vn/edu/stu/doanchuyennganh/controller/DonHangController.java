@@ -68,7 +68,7 @@ public class DonHangController {
     }
 
     @PutMapping("/donhang/{id}")
-    public ResponseEntity<Object> updateDrink(@PathVariable("id") int id, @RequestBody DonHang donHang){
+    public ResponseEntity<Object> updateDonHang(@PathVariable("id") int id, @RequestBody DonHang donHang){
         try {
             Optional<DonHang> result = gDonHangRepository.findById(id);
             DonHang nDonHang = result.get();
@@ -87,7 +87,7 @@ public class DonHangController {
         }
     }
     @DeleteMapping("/donhang/{id}")
-    public ResponseEntity<DonHang> deleteDrink(@PathVariable("id") int id){
+    public ResponseEntity<DonHang> deleteDonHang(@PathVariable("id") int id){
         try {
             gDonHangRepository.deleteById(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
