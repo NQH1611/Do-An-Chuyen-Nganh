@@ -39,6 +39,8 @@ public class DonHang {
     private Date ngayTao;
     @Column(name = "tongtien")
     private BigDecimal tongTien;
+    @Column(name = "trangthai")
+    private int trangthai;
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "sanpham_donhang", joinColumns = { @JoinColumn(name = "donhang_id")}, inverseJoinColumns = {@JoinColumn(name="sanpham_id")})
     private Set<SanPham> sanPhams;
@@ -47,7 +49,7 @@ public class DonHang {
     }
 
     public DonHang(int id, String maDonHang, String hoTen, String diaChiGiao, String sdtGiao, String ghiChu,
-            Date ngayTao, BigDecimal tongTien, Set<vn.edu.stu.doanchuyennganh.model.SanPham> sanPham) {
+            Date ngayTao, BigDecimal tongTien, Set<vn.edu.stu.doanchuyennganh.model.SanPham> sanPham, int trangthai) {
         this.id = id;
         this.maDonHang = maDonHang;
         this.hoTen = hoTen;
@@ -56,7 +58,8 @@ public class DonHang {
         this.ghiChu = ghiChu;
         this.ngayTao = ngayTao;
         this.tongTien = tongTien;
-        //this.sanPhams = sanPham;
+        this.sanPhams = sanPham;
+        this.trangthai = trangthai;
     }
 
     public int getId() {
@@ -129,6 +132,14 @@ public class DonHang {
 
     public void setSanPham(Set<SanPham> sanPhams) {
         this.sanPhams = sanPhams;
+    }
+
+    public int getTrangthai() {
+        return trangthai;
+    }
+
+    public void setTrangthai(int trangthai) {
+        this.trangthai = trangthai;
     }
     
     
