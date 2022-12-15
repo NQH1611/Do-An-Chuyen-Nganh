@@ -126,7 +126,7 @@ let DanhMucTable = $("#danhmuc-table").DataTable({
 })
 DanhMucTable.buttons()
   .container()
-  .appendTo("#DanhMuc-table_wrapper .col-md-6:eq(0)")
+  .appendTo("#danhmuc-table_wrapper .col-md-6:eq(0)")
 
 function loadDanhMucOnTable(paramDanhMuc) {
   "use strict"
