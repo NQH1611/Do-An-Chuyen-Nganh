@@ -21,7 +21,7 @@ public class LoaiSanPhamController {
     @Autowired
     LoaiSanPhamRepository gLoaiSanPhamRepository;
 
-    @GetMapping("/loaiSanPham")
+    @GetMapping("/loaisanpham")
     public ResponseEntity<List<LoaiSanPham>> getAllLoaiSanPham(){
         List<LoaiSanPham> lstLoaiSanPham = new ArrayList<LoaiSanPham>();
         gLoaiSanPhamRepository.findAll().forEach(lstLoaiSanPham::add);
@@ -29,14 +29,14 @@ public class LoaiSanPhamController {
         return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping("/loaiSanPham/{id}")
+    @GetMapping("/loaisanpham/{id}")
     public ResponseEntity<LoaiSanPham> getLoaiSanPhamById(@PathVariable("id") int id){
         Optional<LoaiSanPham> LoaiSanPham = gLoaiSanPhamRepository.findById(id);
         if(LoaiSanPham.isPresent()) return new ResponseEntity<>(LoaiSanPham.get(), HttpStatus.OK);
         return new ResponseEntity<>(null, HttpStatus.NO_CONTENT); 
         
     }
-    @PostMapping("/loaiSanPham")
+    @PostMapping("/loaisanpham")
     public ResponseEntity<Object> createLoaiSanPham(@RequestBody LoaiSanPham LoaiSanPham){
         try {
             int numberOfCharactor = 8;
@@ -54,7 +54,7 @@ public class LoaiSanPhamController {
         }
     }
 
-    @PutMapping("/loaiSanPham/{id}")
+    @PutMapping("/loaisanpham/{id}")
     public ResponseEntity<Object> updateLoaiSanPham(@PathVariable("id") int id, @RequestBody LoaiSanPham LoaiSanPham){
         try {
             Optional<LoaiSanPham> result = gLoaiSanPhamRepository.findById(id);
@@ -67,7 +67,7 @@ public class LoaiSanPhamController {
 					.body("Failed to update specified Hang San Xuat: " + e.getCause().getCause().getMessage());
         }
     }
-    @DeleteMapping("/loaiSanPham/{id}")
+    @DeleteMapping("/loaisanpham/{id}")
     public ResponseEntity<LoaiSanPham> deleteLoaiSanPham(@PathVariable("id") int id){
         try {
             gLoaiSanPhamRepository.deleteById(id);

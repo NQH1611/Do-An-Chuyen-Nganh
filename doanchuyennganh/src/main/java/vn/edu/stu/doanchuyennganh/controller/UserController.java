@@ -47,6 +47,7 @@ public class UserController {
         nUser.setEmail(user.getEmail());
         nUser.setUsername(user.getUsername());
         nUser.setPassword(user.getPassword());
+        nUser.setRole(user.getRole());
         User saveUser = gUserRepository.save(nUser);
         return new ResponseEntity<>(saveUser, HttpStatus.CREATED);
     }
@@ -70,6 +71,7 @@ public class UserController {
         nUser.setEmail(user.getEmail());
         nUser.setUsername(user.getUsername());
         nUser.setPassword(user.getPassword());
+        nUser.setRole(user.getRole());
         User saveUser = gUserRepository.save(nUser);
         return new ResponseEntity<>(saveUser, HttpStatus.CREATED);
     }
