@@ -68,7 +68,6 @@ public class LienHeController {
             nLienHe.setEmail(lienHe.getEmail());
             nLienHe.setDienThoai(lienHe.getDienThoai());
             nLienHe.setNoiDung(lienHe.getNoiDung());
-            nLienHe.setNgayTao(new Date());
             LienHe saveLienHe = gLienHeRepository.save(nLienHe);
             return new ResponseEntity<>(saveLienHe, HttpStatus.OK);
         } catch (Exception e) {

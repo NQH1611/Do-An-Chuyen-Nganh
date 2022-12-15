@@ -98,7 +98,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="./user.html" class="nav-link active">
+                                <a href="./user.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>User</p>
                                 </a>
@@ -110,7 +110,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./nhasanxuat.html" class="nav-link">
+                                <a href="./nhasanxuat.html" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Hãng Sản Xuất</p>
                                 </a>
@@ -144,12 +144,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">User</h1>
+                        <h1 class="m-0">Hãng Sản Xuất</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">User</li>
+                            <li class="breadcrumb-item active">Hãng Sản Xuất</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -160,20 +160,14 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-                <h2 style="text-align: center">User</h2>
-                <input type="button" class="btn btn-primary btn-create-customer mb-3" value="Create Customer">
-                <table class="table table-bordered table-striped table-hover text-center " id="customer-table">
+                <h2 style="text-align: center">Hãng Sản Xuất</h2>
+                <input type="button" class="btn btn-primary btn-create-hangsx mb-3" value="Create Hãng Sản Xuất">
+                <table class="table table-bordered table-striped table-hover text-center " id="hangsx-table">
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Họ Tên</th>
-                            <th>Ngày Sinh</th>
-                            <th>Số Điện Thoại</th>
-                            <th>Địa Chỉ</th>
-                            <th>Email</th>
-                            <th>Username</th>
-                            <th>Password</th>
-                            <th>Role</th>
+                            <th>Mã Hãng Sản Xuất</th>
+                            <th>Tên Hãng Sản Xuất</th>
                             <th>Action</th>
 
                         </tr>
@@ -181,23 +175,23 @@
                     <tbody></tbody>
                 </table>
                 <!-- Modal -->
-                <div class="modal fade" id="modal-delete-customer">
+                <div class="modal fade" id="modal-delete-hangsx">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title text-danger">Xác nhận xóa user</h5>
+                                <h5 class="modal-title text-danger">Xác nhận xóa Hãng Sản Xuất</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <h6 class="text-danger">Bạn có chắc muốn xóa user</h6>
+                                <h6 class="text-danger">Bạn có chắc muốn xóa Hãng Sản Xuất</h6>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                     Close
                                 </button>
-                                <button type="button" class="btn btn-danger" id="delete-customer">
+                                <button type="button" class="btn btn-danger" id="delete-hangsx">
                                     Delete
                                 </button>
                             </div>
@@ -206,7 +200,7 @@
                     </div>
                 </div>
                 <!-- Modal create -->
-                <div class="modal fade" id="modal-create-customer" tabindex="-1" role="dialog"
+                <div class="modal fade" id="modal-create-hangsx" tabindex="-1" role="dialog"
                     aria-labelledby="myLargeModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-centered " role="document">
                         <div class="modal-content">
@@ -220,76 +214,11 @@
                                 <form action="">
                                     <div class="col-sm-12 row ">
                                         <div class="col-sm-3">
-                                            <span>Họ và Tên</span>
+                                            <span>Tên Hãng Sản Xuất</span>
                                         </div>
                                         <div class="col-sm-9">
                                             <input type="text" name="" class="form-control"
-                                                id="inp-create-fullname">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 row mt-2">
-                                        <div class="col-sm-3">
-                                            <span>Ngày Sinh</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="date" name="" class="form-control" 
-                                                id="inp-create-birthday">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 row mt-2">
-                                        <div class="col-sm-3">
-                                            <span>Số Điện Thoại</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control" 
-                                                id="inp-create-numphone">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 row mt-2">
-                                        <div class="col-sm-3">
-                                            <span>Địa Chỉ</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control" 
-                                                id="inp-create-address">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 row mt-2">
-                                        <div class="col-sm-3">
-                                            <span>Email</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control" 
-                                                id="inp-create-email">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 row mt-2">
-                                        <div class="col-sm-3">
-                                            <span>Username</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control" 
-                                                id="inp-create-username">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 row mt-2">
-                                        <div class="col-sm-3">
-                                            <span>Password</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control" 
-                                                id="inp-create-password">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 row mt-2">
-                                        <div class="col-sm-3">
-                                            <span>Role</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <select name="" class="form-control" id="select-create-role">
-                                                <option value="1">Admin</option>
-                                                <option value="0">User</option>
-                                            </select>
+                                                id="inp-create-tenhangsx">
                                         </div>
                                     </div>
                                 </form>
@@ -298,7 +227,7 @@
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                     Close
                                 </button>
-                                <button type="button" class="btn btn-primary" id="create-customer">
+                                <button type="button" class="btn btn-primary" id="create-hangsx">
                                     Create
                                 </button>
                             </div>
@@ -306,7 +235,7 @@
                     </div>
                 </div>
                 <!-- Modal update -->
-                <div class="modal fade" id="modal-update-customer" tabindex="-1" role="dialog"
+                <div class="modal fade" id="modal-update-hangsx" tabindex="-1" role="dialog"
                     aria-labelledby="myLargeModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-centered " role="document">
                         <div class="modal-content">
@@ -320,76 +249,20 @@
                                 <form action="">
                                     <div class="col-sm-12 row ">
                                         <div class="col-sm-3">
-                                            <span>Họ và Tên</span>
+                                            <span>Mã Hãng Sản Xuất</span>
                                         </div>
                                         <div class="col-sm-9">
                                             <input type="text" name="" class="form-control"
-                                                id="inp-update-fullname">
+                                                id="inp-update-mahangsx">
                                         </div>
                                     </div>
                                     <div class="col-sm-12 row mt-2">
                                         <div class="col-sm-3">
-                                            <span>Ngày Sinh</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="date" name="" class="form-control" 
-                                                id="inp-update-birthday">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 row mt-2">
-                                        <div class="col-sm-3">
-                                            <span>Số Điện Thoại</span>
+                                            <span>Tên Hãng Sản Xuất</span>
                                         </div>
                                         <div class="col-sm-9">
                                             <input type="text" name="" class="form-control" 
-                                                id="inp-update-numphone">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 row mt-2">
-                                        <div class="col-sm-3">
-                                            <span>Địa Chỉ</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control" 
-                                                id="inp-update-address">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 row mt-2">
-                                        <div class="col-sm-3">
-                                            <span>Email</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control" 
-                                                id="inp-update-email">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 row mt-2">
-                                        <div class="col-sm-3">
-                                            <span>Username</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control" 
-                                                id="inp-update-username">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 row mt-2">
-                                        <div class="col-sm-3">
-                                            <span>Password</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control" 
-                                                id="inp-update-password">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 row mt-2">
-                                        <div class="col-sm-3">
-                                            <span>Role</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <select name="" class="form-control" id="select-update-role">
-                                                <option value="1">Admin</option>
-                                                <option value="0">User</option>
-                                            </select>
+                                                id="inp-update-tenhangsx">
                                         </div>
                                     </div>
                                 </form>
@@ -398,7 +271,7 @@
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                     Close
                                 </button>
-                                <button type="button" class="btn btn-primary" id="update-customer">
+                                <button type="button" class="btn btn-primary" id="update-hangsx">
                                     Update
                                 </button>
                             </div>
@@ -441,7 +314,7 @@
     <script src="./admin/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <!-- AdminLTE App -->
     <script src="./admin/dist/js/adminlte.js"></script>
-    <script src="./admin/src/user.js"></script>
+    <script src="./admin/src/hangsanxuat.js"></script>
 </body>
 
 </html>

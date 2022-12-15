@@ -80,7 +80,7 @@ let Customer = {
     }
     if (validateCustomer(this.newCustomer)) {
       $.ajax({
-        url: `http://localhost:8080//update/user/${gCustomerId}`,
+        url: `http://localhost:8080/update/user/${gCustomerId}`,
         method: "PUT",
         data: JSON.stringify(this.newCustomer),
         contentType: "application/json",

@@ -172,10 +172,9 @@ function resetCreateCCInput() {
 function validateDanhMuc(paramCC) {
   "use strict"
   let vResult = true
-  try {
-    
-  } catch (e) {
-    alert(e)
+  if(paramCC.tenDanhMuc==""){
+    alert("Vui lòng nhập tên danh mục")
+    return false;
   }
   return vResult
 }
