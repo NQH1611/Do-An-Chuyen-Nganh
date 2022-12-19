@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import vn.edu.stu.doanchuyennganh.model.User;
 
 public interface UserRepository extends JpaRepository<User, Integer>{
-    @Query(value = "SELECT * FROM users where username = ?1 and password = ?2", nativeQuery = true)
+    @Query(value = "SELECT username, password, role FROM users where username = ?1 and password = ?2", nativeQuery = true)
     Optional<User> getUserbyUsernameAndPassword(String username, String password);
 }

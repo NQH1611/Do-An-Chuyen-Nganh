@@ -2,6 +2,7 @@ package vn.edu.stu.doanchuyennganh.model;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -37,19 +38,15 @@ public class DonHang {
     @Column(name = "ngaytao")
     @Temporal(value = TemporalType.TIMESTAMP)
     private Date ngayTao;
-    @Column(name = "tongtien")
-    private BigDecimal tongTien;
     @Column(name = "trangthai")
     private int trangthai;
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(name = "sanpham_donhang", joinColumns = { @JoinColumn(name = "donhang_id")}, inverseJoinColumns = {@JoinColumn(name="sanpham_id")})
-    private Set<SanPham> sanPhams;
+    private int idsanPhams;
     
     public DonHang() {
     }
 
     public DonHang(int id, String maDonHang, String hoTen, String diaChiGiao, String sdtGiao, String ghiChu,
-            Date ngayTao, BigDecimal tongTien, Set<vn.edu.stu.doanchuyennganh.model.SanPham> sanPham, int trangthai) {
+            Date ngayTao, int trangthai, int idsanPhams) {
         this.id = id;
         this.maDonHang = maDonHang;
         this.hoTen = hoTen;
@@ -57,9 +54,8 @@ public class DonHang {
         this.sdtGiao = sdtGiao;
         this.ghiChu = ghiChu;
         this.ngayTao = ngayTao;
-        this.tongTien = tongTien;
-        this.sanPhams = sanPham;
         this.trangthai = trangthai;
+        this.idsanPhams = idsanPhams;
     }
 
     public int getId() {
@@ -118,22 +114,6 @@ public class DonHang {
         this.ngayTao = ngayTao;
     }
 
-    public BigDecimal getTongtien() {
-        return tongTien;
-    }
-
-    public void setTongtien(BigDecimal tongTien) {
-        this.tongTien = tongTien;
-    }
-
-    public Set<SanPham> getSanPham() {
-        return sanPhams;
-    }
-
-    public void setSanPham(Set<SanPham> sanPhams) {
-        this.sanPhams = sanPhams;
-    }
-
     public int getTrangthai() {
         return trangthai;
     }
@@ -141,6 +121,14 @@ public class DonHang {
     public void setTrangthai(int trangthai) {
         this.trangthai = trangthai;
     }
-    
+
+    public int getIdsanPhams() {
+        return idsanPhams;
+    }
+
+    public void setIdsanPhams(int idsanPhams) {
+        this.idsanPhams = idsanPhams;
+    }
+
     
 }

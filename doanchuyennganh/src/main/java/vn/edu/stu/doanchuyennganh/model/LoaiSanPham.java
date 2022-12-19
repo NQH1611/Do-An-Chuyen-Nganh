@@ -29,9 +29,6 @@ public class LoaiSanPham {
     @NotEmpty(message = "dữ liệu không được trống")
     @Column(name = "tendanhmuc")
     private String tenDanhMuc;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "loaiSanPham")
-    @JsonIgnore
-    private Set<SanPham> sanPhams;
     public LoaiSanPham() {
     }
     public LoaiSanPham(int id, String maDanhMuc, String tenDanhMuc) {

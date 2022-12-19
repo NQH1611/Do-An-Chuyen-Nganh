@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./plugins/datatables-buttons/css/buttons.bootstrap4.min.css" />
     <!-- Theme style -->
     <link rel="stylesheet" href="./dist/css/adminlte.min.css" />
+    <script src="./plugins/jquery/jquery.min.js"></script>
 </head>
 
 <body>
@@ -33,7 +34,12 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Home</a>
+                    <a href="./index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <button href="#" class="nav-link btn btn-clearlocal">
+                        <p class="dangnhap"></p>
+                    </button>
                 </li>
                 <!-- <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
@@ -127,6 +133,12 @@
                                     <p>Đơn hàng</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="./sanpham.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Sản Phẩm</p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <!--  -->
@@ -217,8 +229,7 @@
                                             <span>Tên Hãng Sản Xuất</span>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control"
-                                                id="inp-create-tenhangsx">
+                                            <input type="text" name="" class="form-control" id="inp-create-tenhangsx">
                                         </div>
                                     </div>
                                 </form>
@@ -252,8 +263,7 @@
                                             <span>Mã Hãng Sản Xuất</span>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control"
-                                                id="inp-update-mahangsx">
+                                            <input type="text" name="" class="form-control" id="inp-update-mahangsx">
                                         </div>
                                     </div>
                                     <div class="col-sm-12 row mt-2">
@@ -261,8 +271,7 @@
                                             <span>Tên Hãng Sản Xuất</span>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control" 
-                                                id="inp-update-tenhangsx">
+                                            <input type="text" name="" class="form-control" id="inp-update-tenhangsx">
                                         </div>
                                     </div>
                                 </form>
@@ -315,6 +324,19 @@
     <!-- AdminLTE App -->
     <script src="./dist/js/adminlte.js"></script>
     <script src="./src/hangsanxuat.js"></script>
+    <script>
+        var login = localStorage.getItem("login")
+        if (login != null) {
+            var temp = JSON.parse(login)
+            $(".dangnhap").html(temp.username)
+        }else{
+            $(".dangnhap").html("")
+        }
+        $(".btn-clearlocal").click(function () {
+            delete localStorage["login"]
+            window.location.href = "http://127.0.0.1:5500/index.html"
+        })
+    </script>
 </body>
 
 </html>

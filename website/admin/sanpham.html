@@ -103,13 +103,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="./user.html" class="nav-link">
+                                <a href="./user.html" class="nav-link ">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>User</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./loaisanpham.html" class="nav-link active">
+                                <a href="./loaisanpham.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh Mục</p>
                                 </a>
@@ -133,7 +133,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./sanpham.html" class="nav-link">
+                                <a href="./sanpham.html" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Sản Phẩm</p>
                                 </a>
@@ -155,12 +155,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Danh Mục</h1>
+                        <h1 class="m-0">Sản Phẩm</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Danh Mục</li>
+                            <li class="breadcrumb-item active">Sản Phẩm</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -171,124 +171,62 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-                <h2 style="text-align: center">Danh Mục</h2>
-                <input type="button" class="btn btn-primary btn-create-danhmuc mb-3" value="Create Danh Mục">
-                <table class="table table-bordered table-striped table-hover text-center " id="danhmuc-table">
+                <h2 style="text-align: center">Sản Phẩm</h2>
+                <input type="button" class="btn btn-primary btn-sanpham mb-3" value="Create Sản Phẩm">
+                <table class="table table-bordered table-striped table-hover text-center " id="sanpham-table">
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Mã Danh Mục</th>
-                            <th>Tên Danh Mục</th>
                             <th>Action</th>
+                            <th>Model</th>
+                            <th>CPU</th>
+                            <th>VGA</th>
+                            <th>RAM</th>
+                            <th>Ổ Cứng</th>
+                            <th>Màn Hình</th>
+                            <th>Kết Nối</th>
+                            <th>Cổng Giao Tiếp</th>
+                            <th>Webcam</th>
+                            <th>Hệ Điều Hành</th>
+                            <th>Pin</th>
+                            <th>Kích Thước </th>
+                            <th>Trọng Lượng</th>
+                            <th>Màu Sắc</th>
+                            <th>Giá </th>
+                            <th>Hãng Sản Xuất</th>
+                            <th>Hình Ảnh </th>
+                            <th>Khuyến Mãi</th>
+                            <th>Loại Sản Phẩm</th>
 
                         </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
                 <!-- Modal -->
-                <div class="modal fade" id="modal-delete-danhmuc">
+                <div class="modal fade" id="modal-delete-sanpham">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title text-danger">Xác nhận xóa danh mục</h5>
+                                <h5 class="modal-title text-danger">Xác nhận xóa sản phẩm</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <h6 class="text-danger">Bạn có chắc muốn xóa danh mục</h6>
+                                <h6 class="text-danger">Bạn có chắc muốn xóa sản phẩm</h6>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                     Close
                                 </button>
-                                <button type="button" class="btn btn-danger" id="delete-danhmuc">
+                                <button type="button" class="btn btn-danger" id="delete-sanpham">
                                     Delete
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- Modal create -->
-                <div class="modal fade" id="modal-create-danhmuc" tabindex="-1" role="dialog"
-                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered " role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Create User</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="">
-                                    <div class="col-sm-12 row ">
-                                        <div class="col-sm-3">
-                                            <span>Tên Danh Mục</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control"
-                                                id="inp-create-tendanhmuc">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                    Close
-                                </button>
-                                <button type="button" class="btn btn-primary" id="create-danhmuc">
-                                    Create
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Modal update -->
-                <div class="modal fade" id="modal-update-danhmuc" tabindex="-1" role="dialog"
-                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered " role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Update Customer</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="">
-                                    <div class="col-sm-12 row ">
-                                        <div class="col-sm-3">
-                                            <span>Mã Danh Mục</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control"
-                                                id="inp-update-madanhmuc">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 row mt-2">
-                                        <div class="col-sm-3">
-                                            <span>Tên Danh Mục</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control" 
-                                                id="inp-update-tendanhmuc">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                    Close
-                                </button>
-                                <button type="button" class="btn btn-primary" id="update-danhmuc">
-                                    Update
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div><!-- /.container-fluid -->
         </section>
         <!-- /.content -->
@@ -325,7 +263,18 @@
     <script src="./plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <!-- AdminLTE App -->
     <script src="./dist/js/adminlte.js"></script>
-    <script src="./src/loaisanpham.js"></script>
+    <script src="./src/sanpham.js"></script>
+    <script>
+        var sanPhamTable = $("#sanpham-table").DataTable({
+        responsive: true,
+        lengthChange: true,
+        autoWidth: true,
+        buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+        })
+        sanPhamTable.buttons()
+        .container()
+        .appendTo("#sanpham-table_wrapper .col-md-6:eq(0)")
+    </script>
     <script>
         var login = localStorage.getItem("login")
         if (login != null) {

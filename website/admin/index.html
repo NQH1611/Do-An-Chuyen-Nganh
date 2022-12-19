@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./plugins/datatables-buttons/css/buttons.bootstrap4.min.css" />
     <!-- Theme style -->
     <link rel="stylesheet" href="./dist/css/adminlte.min.css" />
+    <script src="./plugins/jquery/jquery.min.js"></script>
 </head>
 
 <body>
@@ -33,7 +34,12 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Home</a>
+                    <a href="./index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <button href="#" class="nav-link btn btn-clearlocal">
+                        <p class="dangnhap"></p>
+                    </button>
                 </li>
                 <!-- <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
@@ -122,9 +128,15 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./donhang.html" class="nav-link active">
+                                <a href="./index.html" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Đơn hàng</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./sanpham.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Sản Phẩm</p>
                                 </a>
                             </li>
                         </ul>
@@ -171,9 +183,7 @@
                             <th>Số Điện Thoại Giao</th>
                             <th>Ghi Chú</th>
                             <th>Ngày Tạo</th>
-                            <th>Tổng Tiền</th>
-                            <th>Trạng Thái</th>
-                            <th>Sản Phẩm</th>
+                            <th>Trạng thái</th>
                             <th>Action</th>
 
                         </tr>
@@ -223,8 +233,7 @@
                                             <span>Mã Đơn Hàng</span>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control"
-                                                id="inp-update-ordercode">
+                                            <input type="text" name="" class="form-control" id="inp-update-ordercode">
                                         </div>
                                     </div>
                                     <div class="col-sm-12 row ">
@@ -232,8 +241,7 @@
                                             <span>Họ và Tên</span>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control"
-                                                id="inp-update-fullname">
+                                            <input type="text" name="" class="form-control" id="inp-update-fullname">
                                         </div>
                                     </div>
                                     <div class="col-sm-12 row mt-2">
@@ -241,8 +249,7 @@
                                             <span>Địa Chỉ Giao</span>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control" 
-                                                id="inp-update-address">
+                                            <input type="text" name="" class="form-control" id="inp-update-address">
                                         </div>
                                     </div>
                                     <div class="col-sm-12 row mt-2">
@@ -250,8 +257,7 @@
                                             <span>Số Điện Thoại</span>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control" 
-                                                id="inp-update-numphone">
+                                            <input type="text" name="" class="form-control" id="inp-update-numphone">
                                         </div>
                                     </div>
                                     <div class="col-sm-12 row mt-2">
@@ -259,29 +265,19 @@
                                             <span>Ghi Chú</span>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control" 
-                                                id="inp-update-ghichu">
+                                            <input type="text" name="" class="form-control" id="inp-update-ghichu">
                                         </div>
                                     </div>
                                     <div class="col-sm-12 row mt-2">
                                         <div class="col-sm-3">
-                                            <span>Tổng Tiền</span>
+                                            <span>Trạng Thái</span>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control" 
-                                                id="inp-update-tongtien">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-sm-12 row mt-2">
-                                        <div class="col-sm-3">
-                                            <span>Ghi Chú</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <select name="" class="form-control" id="select-tongtien">
+                                            <select name="" class="form-control" id="select-trangthai">
                                                 <option value="0">Mới</option>
                                                 <option value="1">Xác Nhận</option>
                                                 <option value="2">Đã Giao</option>
+                                                <option value="3">Đã Hủy</option>
                                             </select>
                                         </div>
                                     </div>
@@ -291,7 +287,7 @@
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                     Close
                                 </button>
-                                <button type="button" class="btn btn-primary" id="update-lienhe">
+                                <button type="button" class="btn btn-primary" id="update-donhang">
                                     Update
                                 </button>
                             </div>
@@ -312,7 +308,7 @@
         </div>
     </footer>
     <!-- jQuery -->
-    <script src="./plugins/jquery/jquery.min.js"></script>
+
     <!-- jQuery UI 1.11.4 -->
     <script src="./plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -334,7 +330,20 @@
     <script src="./plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <!-- AdminLTE App -->
     <script src="./dist/js/adminlte.js"></script>
-    <script src="./src/lienhe.js"></script>
+    <script src="./src/index.js"></script>
+    <script>
+        var login = localStorage.getItem("login")
+        if (login != null) {
+            var temp = JSON.parse(login)
+            $(".dangnhap").html(temp.username)
+        }else{
+            $(".dangnhap").html("")
+        }
+        $(".btn-clearlocal").click(function () {
+            delete localStorage["login"]
+            window.location.href = "http://127.0.0.1:5500/index.html"
+        })
+    </script>
 </body>
 
 </html>

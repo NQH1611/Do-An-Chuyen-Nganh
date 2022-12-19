@@ -103,13 +103,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="./user.html" class="nav-link">
+                                <a href="./user.html" class="nav-link ">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>User</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./loaisanpham.html" class="nav-link active">
+                                <a href="./loaisanpham.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh Mục</p>
                                 </a>
@@ -127,13 +127,13 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link">
+                                <a href="./index.html" class="nav-link ">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Đơn hàng</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./sanpham.html" class="nav-link">
+                                <a href="./sanpham.html" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Sản Phẩm</p>
                                 </a>
@@ -155,12 +155,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Danh Mục</h1>
+                        <h1 class="m-0">Sản Phẩm</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Danh Mục</li>
+                            <li class="breadcrumb-item active">Sản Phẩm</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -170,126 +170,173 @@
 
         <!-- Main content -->
         <section class="content">
-            <div class="container-fluid">
-                <h2 style="text-align: center">Danh Mục</h2>
-                <input type="button" class="btn btn-primary btn-create-danhmuc mb-3" value="Create Danh Mục">
-                <table class="table table-bordered table-striped table-hover text-center " id="danhmuc-table">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Mã Danh Mục</th>
-                            <th>Tên Danh Mục</th>
-                            <th>Action</th>
+            <div class="col-sm-12 mt-5 mb-4 text-center">
+                <h2>Thêm Sản Phẩm</h2>
+            </div>
+            <div class="col-sm-12">
+                <form action="">
+                    <div class="col-sm-12 row ">
+                        <div class="col-sm-3">
+                            <span>Model</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-create-model">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row ">
+                        <div class="col-sm-3">
+                            <span>CPU</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-create-cpu">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>VGA</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-create-vga">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>RAM</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-create-ram">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Ổ Cứng</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-create-ocung">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Màn Hình</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-create-manhinh">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Kết Nối</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-create-ketnoi">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Cổng Giao Tiếp</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-create-conggt">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Webcam</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-create-webcam">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Hệ Điều Hành</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-create-hdh">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Pin</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-create-pin">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Kích Thước</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-create-kichthuoc">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Trọng Lượng</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-create-trongluong">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Màu Sắc</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-create-color">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Giá</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-create-price">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Hãng Sản Xuất</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <select name="" class="form-control" id="select-hangsx">
+                                <option value="0">Chọn Hãng Sản Xuất</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Hình Ảnh</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="file" name="" class="form-control" id="inp-create-hinhanh">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Khuyến Mãi</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-create-km">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Loại Sản Phẩm</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <select name="" class="form-control" id="select-loaisp">
+                                <option value="0">Chọn Loại Sản Phẩm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 m-5 text-center">
+                        <input type="button" class="btn btn-success w-25 btn-create-sanpham" value="Thêm">
 
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-                <!-- Modal -->
-                <div class="modal fade" id="modal-delete-danhmuc">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title text-danger">Xác nhận xóa danh mục</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <h6 class="text-danger">Bạn có chắc muốn xóa danh mục</h6>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                    Close
-                                </button>
-                                <button type="button" class="btn btn-danger" id="delete-danhmuc">
-                                    Delete
-                                </button>
-                            </div>
-                        </div>
-
                     </div>
-                </div>
-                <!-- Modal create -->
-                <div class="modal fade" id="modal-create-danhmuc" tabindex="-1" role="dialog"
-                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered " role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Create User</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="">
-                                    <div class="col-sm-12 row ">
-                                        <div class="col-sm-3">
-                                            <span>Tên Danh Mục</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control"
-                                                id="inp-create-tendanhmuc">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                    Close
-                                </button>
-                                <button type="button" class="btn btn-primary" id="create-danhmuc">
-                                    Create
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Modal update -->
-                <div class="modal fade" id="modal-update-danhmuc" tabindex="-1" role="dialog"
-                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered " role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Update Customer</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="">
-                                    <div class="col-sm-12 row ">
-                                        <div class="col-sm-3">
-                                            <span>Mã Danh Mục</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control"
-                                                id="inp-update-madanhmuc">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 row mt-2">
-                                        <div class="col-sm-3">
-                                            <span>Tên Danh Mục</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control" 
-                                                id="inp-update-tendanhmuc">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                    Close
-                                </button>
-                                <button type="button" class="btn btn-primary" id="update-danhmuc">
-                                    Update
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- /.container-fluid -->
+                </form>
+            </div>
         </section>
         <!-- /.content -->
         <!-- /.content-wrapper -->
@@ -325,7 +372,44 @@
     <script src="./plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <!-- AdminLTE App -->
     <script src="./dist/js/adminlte.js"></script>
-    <script src="./src/loaisanpham.js"></script>
+    <script src="./src/sanpham.js"></script>
+    <script>
+        $(document).ready(function(){
+            loadDataHangSXToSelect();
+            loadDataDanhMucToSelect();
+        })
+        function loadDataHangSXToSelect(){
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/hangsanxuat",
+                dataType: "json",
+                success: function (response) {
+                    for(var bIndex in response){
+                        var html = `
+                            <option value='${response[bIndex].tenHangSX}'>${response[bIndex].tenHangSX}</option>
+                        `
+                        $("#select-hangsx").append(html)
+                    }
+                }
+            });
+        }
+        function loadDataDanhMucToSelect(){
+            $("#select-loaisp").val('')
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/loaisanpham",
+                dataType: "json",
+                success: function (response) {
+                    for(var bIndex in response){
+                        var html = `
+                            <option value='${response[bIndex].tenDanhMuc}'>${response[bIndex].tenDanhMuc}</option>
+                        `
+                        $("#select-loaisp").append(html)
+                    }
+                }
+            });
+        }
+    </script>
     <script>
         var login = localStorage.getItem("login")
         if (login != null) {

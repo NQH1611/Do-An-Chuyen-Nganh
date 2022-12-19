@@ -33,7 +33,12 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Home</a>
+                    <a href="./index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <button href="#" class="nav-link btn btn-clearlocal">
+                        <p class="dangnhap"></p>
+                    </button>
                 </li>
                 <!-- <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
@@ -125,6 +130,12 @@
                                 <a href="./index.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Đơn hàng</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./sanpham.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Sản Phẩm</p>
                                 </a>
                             </li>
                         </ul>
@@ -442,6 +453,19 @@
     <!-- AdminLTE App -->
     <script src="./dist/js/adminlte.js"></script>
     <script src="./src/user.js"></script>
+    <script>
+        var login = localStorage.getItem("login")
+        if (login != null) {
+            var temp = JSON.parse(login)
+            $(".dangnhap").html(temp.username)
+        }else{
+            $(".dangnhap").html("")
+        }
+        $(".btn-clearlocal").click(function () {
+            delete localStorage["login"]
+            window.location.href = "http://127.0.0.1:5500/index.html"
+        })
+    </script>
 </body>
 
 </html>

@@ -26,11 +26,11 @@ public class SanPham {
     @Column(name = "model")
     private String model;
     @Column(name = "CPU")
-    private String CPU;
+    private String cpu;
     @Column(name = "VGA")
-    private String VGA;
+    private String vga;
     @Column(name = "RAM")
-    private String RAM;
+    private String ram;
     @Column(name = "ocung")
     private String oCung;
     @Column(name = "manhinh")
@@ -53,32 +53,23 @@ public class SanPham {
     private String mauSac;
     @Column(name = "gia")
     private BigDecimal gia;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "hangsanxuat")
-    @JsonIgnore
-    private HangSanXuat hangSanXuat;
+    private String hangSanXuat;
     @Column(name = "hinhanh")
     private String hinhAnh;
     @Column(name = "khuyenmai")
     private String khuyenMai;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "loaisanpham")
-    @JsonIgnore
-    private LoaiSanPham loaiSanPham;
-    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE}, mappedBy = "sanPhams")
-    private Set<DonHang> donHangs;
+    private String loaiSanPham;
     public SanPham() {
     }
-   
-    public SanPham(int id, String model, String CPU, String VGA, String RAM, String oCung, String manHinh,
+    public SanPham(int id, String model, String cpu, String vga, String ram, String oCung, String manHinh,
             String ketNoi, String congGiaoTiep, String webcam, String heDieuHanh, String pin, String kichThuoc,
-            String trongLuong, String mauSac, BigDecimal gia, HangSanXuat hangSanXuat, String hinhAnh, String khuyenMai,
-            LoaiSanPham loaiSanPham) {
+            String trongLuong, String mauSac, BigDecimal gia, String hangSanXuat, String hinhAnh, String khuyenMai,
+            String loaiSanPham) {
         this.id = id;
         this.model = model;
-        this.CPU = CPU;
-        this.VGA = VGA;
-        this.RAM = RAM;
+        this.cpu = cpu;
+        this.vga = vga;
+        this.ram = ram;
         this.oCung = oCung;
         this.manHinh = manHinh;
         this.ketNoi = ketNoi;
@@ -95,7 +86,6 @@ public class SanPham {
         this.khuyenMai = khuyenMai;
         this.loaiSanPham = loaiSanPham;
     }
-
     public int getId() {
         return id;
     }
@@ -108,40 +98,23 @@ public class SanPham {
     public void setModel(String model) {
         this.model = model;
     }
-    public String getCPU() {
-        return CPU;
+    public String getCpu() {
+        return cpu;
     }
-    public void setCPU(String cPU) {
-        CPU = cPU;
+    public void setCpu(String cpu) {
+        this.cpu = cpu;
     }
-    public String getVGA() {
-        return VGA;
+    public String getVga() {
+        return vga;
     }
-    public void setVGA(String vGA) {
-        VGA = vGA;
+    public void setVga(String vga) {
+        this.vga = vga;
     }
-    public String getRAM() {
-        return RAM;
+    public String getRam() {
+        return ram;
     }
-    
-    public BigDecimal getGia() {
-        return gia;
-    }
-
-    public void setGia(BigDecimal gia) {
-        this.gia = gia;
-    }
-
-    public LoaiSanPham getLoaiSanPham() {
-        return loaiSanPham;
-    }
-
-    public void setLoaiSanPham(LoaiSanPham loaiSanPham) {
-        this.loaiSanPham = loaiSanPham;
-    }
-
-    public void setRAM(String rAM) {
-        RAM = rAM;
+    public void setRam(String ram) {
+        this.ram = ram;
     }
     public String getoCung() {
         return oCung;
@@ -203,10 +176,16 @@ public class SanPham {
     public void setMauSac(String mauSac) {
         this.mauSac = mauSac;
     }
-    public HangSanXuat getHangSanXuat() {
+    public BigDecimal getGia() {
+        return gia;
+    }
+    public void setGia(BigDecimal gia) {
+        this.gia = gia;
+    }
+    public String getHangSanXuat() {
         return hangSanXuat;
     }
-    public void setHangSanXuat(HangSanXuat hangSanXuat) {
+    public void setHangSanXuat(String hangSanXuat) {
         this.hangSanXuat = hangSanXuat;
     }
     public String getHinhAnh() {
@@ -221,5 +200,12 @@ public class SanPham {
     public void setKhuyenMai(String khuyenMai) {
         this.khuyenMai = khuyenMai;
     }
+    public String getLoaiSanPham() {
+        return loaiSanPham;
+    }
+    public void setLoaiSanPham(String loaiSanPham) {
+        this.loaiSanPham = loaiSanPham;
+    }
+   
     
 }

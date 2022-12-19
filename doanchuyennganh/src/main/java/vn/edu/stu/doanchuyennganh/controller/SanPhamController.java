@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import vn.edu.stu.doanchuyennganh.model.SanPham;
+import vn.edu.stu.doanchuyennganh.repository.SanPhamDTO;
 import vn.edu.stu.doanchuyennganh.repository.SanPhamRepository;
 
 @RestController
@@ -33,6 +34,21 @@ public class SanPhamController {
             return new ResponseEntity<>(lstSanPham, HttpStatus.OK);
         return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
     }
+    @GetMapping("/model")
+    public ResponseEntity<List<SanPhamDTO>> getModelAndPriceFromSanPham() {
+        List<SanPhamDTO> lstModel = new ArrayList<SanPhamDTO>();
+        gSanPhamRepository.getModelAndGiaSanPham().forEach(lstModel::add);
+        if (lstModel.size() != 0) return new ResponseEntity<>(lstModel, HttpStatus.OK);
+        return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/gethangsx/{maHangSX}")
+    public ResponseEntity<List<SanPham>> getSanPhamByMaHangSX(@PathVariable("maHangSX") String maHangSX){
+        List<SanPham> lstSanPham = new ArrayList<SanPham>();
+        gSanPhamRepository.getSanPhamByHangSanXuat(maHangSX).forEach(lstSanPham::add);
+        if (lstSanPham.size() != 0) return new ResponseEntity<>(lstSanPham, HttpStatus.OK);
+        return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+    }
 
     @GetMapping("/sanpham/{id}")
     public ResponseEntity<SanPham> getSanPhamById(@PathVariable("id") int id) {
@@ -47,9 +63,9 @@ public class SanPhamController {
         try {
             SanPham nSanPham = new SanPham();
             nSanPham.setModel(sanPham.getModel());
-            nSanPham.setCPU(sanPham.getCPU());
-            nSanPham.setVGA(sanPham.getVGA());
-            nSanPham.setRAM(sanPham.getRAM());
+            nSanPham.setCpu(sanPham.getCpu());
+            nSanPham.setVga(sanPham.getVga());
+            nSanPham.setRam(sanPham.getRam());
             nSanPham.setoCung(sanPham.getoCung());
             nSanPham.setManHinh(sanPham.getManHinh());
             nSanPham.setKetNoi(sanPham.getKetNoi());
@@ -78,9 +94,9 @@ public class SanPhamController {
             Optional<SanPham> result = gSanPhamRepository.findById(id);
             SanPham nSanPham = result.get();
             nSanPham.setModel(sanPham.getModel());
-            nSanPham.setCPU(sanPham.getCPU());
-            nSanPham.setVGA(sanPham.getVGA());
-            nSanPham.setRAM(sanPham.getRAM());
+            nSanPham.setCpu(sanPham.getCpu());
+            nSanPham.setVga(sanPham.getVga());
+            nSanPham.setRam(sanPham.getRam());
             nSanPham.setoCung(sanPham.getoCung());
             nSanPham.setManHinh(sanPham.getManHinh());
             nSanPham.setKetNoi(sanPham.getKetNoi());

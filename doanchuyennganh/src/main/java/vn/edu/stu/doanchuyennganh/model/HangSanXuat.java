@@ -29,18 +29,14 @@ public class HangSanXuat {
     @NotEmpty(message = "dữ liệu không được trống")
     @Column(name = "tenhangsx")
     private String tenHangSX;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "hangSanXuat")
-    @JsonIgnore
-    private Set<SanPham> sanPhams;
     public HangSanXuat() {
     }
     
     public HangSanXuat(int id, @NotEmpty(message = "dữ liệu không được trống") @Size(min = 6, max = 12) String maHangSX,
-            @NotEmpty(message = "dữ liệu không được trống") String tenHangSX, Set<SanPham> sanPhams) {
+            @NotEmpty(message = "dữ liệu không được trống") String tenHangSX) {
         this.id = id;
         this.maHangSX = maHangSX;
         this.tenHangSX = tenHangSX;
-        this.sanPhams = sanPhams;
     }
 
     public int getId() {
@@ -62,12 +58,5 @@ public class HangSanXuat {
         this.tenHangSX = tenHangSX;
     }
 
-    public Set<SanPham> getSanPhams() {
-        return sanPhams;
-    }
-
-    public void setSanPhams(Set<SanPham> sanPhams) {
-        this.sanPhams = sanPhams;
-    }
     
 }

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import vn.edu.stu.doanchuyennganh.model.User;
+import vn.edu.stu.doanchuyennganh.repository.UserDTO;
 import vn.edu.stu.doanchuyennganh.repository.UserRepository;
 
 @RestController
@@ -52,11 +53,11 @@ public class UserController {
         return new ResponseEntity<>(saveUser, HttpStatus.CREATED);
     }
 
-    @PostMapping("/login")
-    public ResponseEntity<User> login(@RequestBody User user){
-        String username = user.getUsername();
-        String password = user.getPassword();
-        Optional<User> result = gUserRepository.getUserbyUsernameAndPassword(username, password);
+    @PostMapping("/login?username={username}&password={password}")
+    public ResponseEntity<Object> login(@PathVariable("username") String username, @PathVariable("username") String password){
+        String un = username;
+        String pw = password;
+        Optional<User> result = gUserRepository.getUserbyUsernameAndPassword(un, pw);
         if(result.isPresent()) return new ResponseEntity<>(result.get(), HttpStatus.OK);
         return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
     }

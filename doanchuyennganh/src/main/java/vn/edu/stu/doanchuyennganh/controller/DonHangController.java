@@ -54,9 +54,8 @@ public class DonHangController {
             nDonHang.setSdtGiao(donHang.getSdtGiao());
             nDonHang.setGhiChu(donHang.getGhiChu());
             nDonHang.setNgayTao(new Date());
-            nDonHang.setTongtien(donHang.getTongtien());
-            nDonHang.setSanPham(donHang.getSanPham());
             nDonHang.setTrangthai(0);
+            nDonHang.setIdsanPhams(donHang.getIdsanPhams());
             DonHang saveDonHang = gDonHangRepository.save(nDonHang);
             return new ResponseEntity<>(saveDonHang, HttpStatus.CREATED);
         } catch (Exception e) {
@@ -76,9 +75,7 @@ public class DonHangController {
             nDonHang.setDiaChiGiao(donHang.getDiaChiGiao());
             nDonHang.setSdtGiao(donHang.getSdtGiao());
             nDonHang.setGhiChu(donHang.getGhiChu());
-            nDonHang.setNgayTao(new Date());
-            nDonHang.setTongtien(donHang.getTongtien());
-            nDonHang.setSanPham(donHang.getSanPham());
+            nDonHang.setTrangthai(donHang.getTrangthai());
             DonHang saveDonHang = gDonHangRepository.save(nDonHang);
             return new ResponseEntity<>(saveDonHang, HttpStatus.OK);
         } catch (Exception e) {
